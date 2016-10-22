@@ -1,5 +1,6 @@
 package joshuawink.nix;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,11 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView timeRemaining = (TextView)findViewById(R.id.timeRemaining);
+
         Button startButton = (Button)findViewById(R.id.startButton);
-
-
-
-
+        Button goToMapsButton = (Button)findViewById(R.id.goToMapsButton);
 
 
         final CountDownTimer countDown = new CountDownTimer(300000, 1000){
@@ -27,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
 
-                timeRemaining.setText("Time Remaining until alerts are sent" +
-                                       millisUntilFinished / 1000);
+                timeRemaining.setText("Time Remaining until alerts are sent " +
+                        ((millisUntilFinished / 60000)+":"+(millisUntilFinished % 60000 / 1000)));
+
+
             };
 
             @Override
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        goToMapsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

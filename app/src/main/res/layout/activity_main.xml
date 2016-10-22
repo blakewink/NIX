@@ -10,30 +10,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="joshuawink.nix.MainActivity">
 
-    <Button
-        android:text="Start"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="111dp"
-        android:id="@+id/startButton" />
+        android:layout_marginTop="15dp"
+        android:id="@+id/timeRemaining"
+        android:text="start"
+        android:textSize="24sp"
+        android:layout_below="@+id/timeRemainingText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Time Remaining Until Alert Is Sent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
         android:id="@+id/timeRemainingText"
+        android:textSize="36sp"
+        android:typeface="serif"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
 
-    <TextView
+    <Button
+        android:text="Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/timeRemainingText"
+        android:id="@+id/startButton"
+        android:layout_below="@+id/timeRemaining"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:id="@+id/timeRemaining"
-        android:text="start" />
+        android:layout_marginTop="37dp" />
+
+    <Button
+        android:text="Maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:id="@+id/goToMapsButton"
+        android:layout_below="@+id/startButton"
+        android:layout_alignStart="@+id/startButton" />
+
 </RelativeLayout>
